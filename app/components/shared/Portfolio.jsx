@@ -18,7 +18,7 @@ export default class Portfolio extends React.Component {
   }
 
   render() {
-    this.setState({item: null});
+    //this.setState({item: null});
     const renderItem = (item, index) => {
       const boundTap = this.handleClick.bind(this, index);
       return (
@@ -51,5 +51,13 @@ export default class Portfolio extends React.Component {
 }
 
 Portfolio.propTypes = {
-  items: React.PropTypes.node.isRequired
+  items: React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        description: React.PropTypes.string.isRequired,
+        image: React.PropTypes.string.isRequired,
+        title: React.PropTypes.string.isRequired,
+        stack: React.PropTypes.string.isRequired,
+        urls: React.PropTypes.arrayOf(React.PropTypes.string.isRequired)
+      })
+    )
 };

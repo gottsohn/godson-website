@@ -27,5 +27,11 @@ export default class SocialMediaLink extends React.Component {
 }
 
 SocialMediaLink.propTypes = {
-  items: React.PropTypes.node.isRequired
+  items: React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        className: React.PropTypes.string.isRequired,
+        username: React.PropTypes.string.isRequired,
+        url: React.PropTypes.string.isRequired
+      })
+    )
 };
