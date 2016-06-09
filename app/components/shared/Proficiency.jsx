@@ -26,5 +26,10 @@ export default class Proficiency extends React.Component {
 }
 
 Proficiency.propTypes = {
-  items: React.PropTypes.node.isRequired
+  items: React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        language: React.PropTypes.string.isRequired,
+        score: React.PropTypes.number.isRequired
+      })
+    )
 };

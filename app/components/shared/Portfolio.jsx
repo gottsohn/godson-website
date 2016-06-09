@@ -9,7 +9,7 @@ export default class Portfolio extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      item: null
+      item: this.props.items[0]
     };
   }
 
@@ -38,7 +38,7 @@ export default class Portfolio extends React.Component {
 
     return (
       <div>
-          {this.state.item ? <Dialog item={this.state.item} /> : null}
+          <Dialog item={this.state.item} />
           <div className={styles.portfolio}>
             <List>
               {this.props.items.map(renderItem)}
@@ -50,5 +50,13 @@ export default class Portfolio extends React.Component {
 }
 
 Portfolio.propTypes = {
-  items: React.PropTypes.node.isRequired
+  items: React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        description: React.PropTypes.string.isRequired,
+        image: React.PropTypes.string.isRequired,
+        title: React.PropTypes.string.isRequired,
+        stack: React.PropTypes.string.isRequired,
+        urls: React.PropTypes.arrayOf(React.PropTypes.string.isRequired)
+      })
+    )
 };

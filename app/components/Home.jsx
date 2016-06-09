@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import SocialMediaLink from './shared/SocialMediaLink.jsx';
 import Proficiency from './shared/Proficiency.jsx';
 import Portfolio from './shared/Portfolio.jsx';
+import Footer from './shared/Footer.jsx';
 
 // Data imports
 import socialMediaLinks from '../data/SocialMediaLinks.json';
@@ -38,31 +39,30 @@ export default class Home extends React.Component {
               <li>Siwft+iOS App development</li>
               <li>A couple of Calisthenic moves</li>
             </ul>
+            <br/>
+            <h4>Kontakt / Contact</h4>
+            <p><i className={classnames('fa', 'fa-envelope-o', styles.marginRight)}></i><a href='mailto:godson.ukpere@gmail.com'>godson.ukpere@gmail.com</a></p>
+            <p><i className={classnames('fa', 'fa-phone', styles.marginRight)}></i><a href='tel:+234-809-613-2990'>+234-809-613-2990</a></p>
+            <p><i className={classnames('fa', 'fa-skype', styles.marginRight)}></i><a href='skype:godson.ukpere'>godson.ukpere</a></p>
           </section>
-          <section className={styles.section}>
+          <section className={styles.section} id="socialmedia">
             <h4>Sozial / Social</h4>
             <SocialMediaLink items={socialMediaLinks} />
           </section>
-          <section className={styles.section}>
+          <section className={styles.section} id="proficiency">
             <h4>Können / Proficiency</h4>
             <Proficiency items={proficiency} />
           </section>
-          <section className={styles.section}>
+          <section className={styles.section} id="portfolio">
             <h4>Portefeuille / Portfolio</h4>
             <Portfolio items={portfolio} />
           </section>
-          <section className={styles.section}>
+          <section className={styles.section} id="opensource">
             <h4>Open Source</h4>
             <Portfolio items={opensource} />
           </section>
         </main>
-        <footer>
-          <section>
-            <p>
-              <small>Built with <a className={styles.underline} href="//facebook.github.io/react/" target="_blank">ReactJS</a> and <a className={styles.underline} href="//material-ui.com"  target="_blank">Material-ui</a></small>
-            </p>
-          </section>
-        </footer>
+        <Footer />
       </div>
     );
   }
