@@ -9,7 +9,13 @@ export default class Portfolio extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      item: props.items[0]
+      item: {
+        title: '',
+        urls: [],
+        description: '',
+        image: '',
+        stack: ''
+      }
     };
   }
 

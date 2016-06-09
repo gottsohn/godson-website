@@ -10,6 +10,7 @@ export default class CustomDialog extends React.Component {
     this.state = {
       open: false
     };
+
     this.handleOpen = this.handleOpen.bind(this);
     this.handleClose = this.handleClose.bind(this);
   }
@@ -21,11 +22,16 @@ export default class CustomDialog extends React.Component {
   }
 
   handleOpen() {
-    this.setState({open: true});
+    this.setState({
+      open: true
+    });
   }
 
   handleClose() {
-    this.setState({open: false});
+    this.props.item.title = '';
+    this.setState({
+      open: false
+    });
   }
 
   renderUrl(url, index) {
@@ -56,7 +62,7 @@ export default class CustomDialog extends React.Component {
           autoScrollBodyContent
           modal={false}
           onRequestClose={this.handleClose}
-          open={this.state.open}
+          open={this.props.item.title !== '' && this.state.open}
           title={this.props.item.title}
       >
         <div className={styles.paddingTop}>
