@@ -1,23 +1,24 @@
 {
-  "name": "webpack-express-boilerplate",
+  "name": "website-godson",
   "version": "0.1.0",
-  "description": "A boilerplate for running a Webpack workflow in Node express",
+  "description": "My website",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/christianalfoni/webpack-express-boilerplate.git"
+    "url": "https://github.com/gottsohn/website-godson.git"
   },
   "keywords": [
     "express",
     "webpack",
-    "node"
+    "node",
+    "reactjs"
   ],
-  "author": "Christian Alfoni",
+  "author": "Godson Ukpere",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/christianalfoni/webpack-express-boilerplate/issues"
+    "url": "https://github.com/gottsohn/website-godson/issues"
   },
-  "homepage": "https://github.com/christianalfoni/webpack-express-boilerplate",
+  "homepage": "https://github.com/gottsohn/website-godson",
   "scripts": {
     "test": "",
     "start": "node server",
@@ -27,8 +28,13 @@
   },
   "dependencies": {
     "babel-cli": "^6.4.0",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3"
+    "classnames": "^2.2.5",
+    "firebase": "^3.0.4",
+    "font-awesome": "^4.6.3",
+    "material-ui": "^0.15.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-tap-event-plugin": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",

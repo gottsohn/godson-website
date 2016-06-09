@@ -1,10 +1,117 @@
-.app {
-  background-color: green;
-  height: 50px;
-  border: 1px solid blue;
+body {
+  font: normal 1em Roboto, sans-serif;
+  background-color: #009090;
+  color: #fff;
 }
 
-.bap {
-  background-color: red;
-  height: 25px;
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 5px 0;
+  padding: 0;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.section {
+  margin: 40px 0;
+}
+
+.sectionText {
+  max-width: 560px;
+  margin: 40px auto 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.icon > span {
+  display: inline-block;
+  margin: 0 0 0 5px;
+}
+
+.proficiency {
+  margin: 5px 0;
+}
+
+.proficiency > span {
+  width: 120px;
+  font-size: 0.8em;
+  text-align: left;
+}
+
+.proficiency > span, .proficiency > div {
+  display: inline-block;
+  margin: 0 5px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.proficiency > div {
+  width: auto;
+  display: inline-block !important;
+  max-width: 440px;
+}
+
+.portfolio {
+    margin: 0 auto;
+    max-width: 560px;
+    text-align: left;
+    color: #fff !important;
+}
+
+ul.list {
+  margin: 2px;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+ul.list > li {
+  font-size: 0.8em;
+}
+
+.icon {
+  display: inline-block;
+  margin: 2px 23px;
+}
+
+.icon > span {
+  margin: 10px 0 0 0;
+}
+
+.headerTitle {
+  font-size: 4.65em;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.marginRight {
+  margin: 0 5px 0 0;
+}
+
+.inlineBlock {
+  display: inline-block;
+  margin: 0 15px 0 0;
+  vertical-align: top;
+}
+
+.itemImage {
+  max-height: 128px;
+  padding:5px;
+  border-radius: 50%;
+  background-color: #ececec;
+}
+
+.paddingTop {
+  padding: 10px 0;
 }
