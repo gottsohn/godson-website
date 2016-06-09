@@ -9,6 +9,7 @@ import Portfolio from './shared/Portfolio.jsx';
 import socialMediaLinks from '../data/SocialMediaLinks.json';
 import portfolio from '../data/Portfolio.json';
 import proficiency from '../data/Proficiency.json';
+import opensource from '../data/OpenSource.json';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <div className={styles.container}>
-        <header>
+        <main>
           <section className={styles.section}>
             <h1 className={styles.headerTitle}>Godson Ukpere</h1>
           </section>
@@ -46,17 +47,21 @@ export default class Home extends React.Component {
             <h4>Können / Proficiency</h4>
             <Proficiency items={proficiency} />
           </section>
-
           <section className={styles.section}>
             <h4>Portefeuille / Portfolio</h4>
             <Portfolio items={portfolio} />
           </section>
-        </header>
-        <main>
-
+          <section className={styles.section}>
+            <h4>Open Source</h4>
+            <Portfolio items={opensource} />
+          </section>
         </main>
         <footer>
-
+          <section>
+            <p>
+              <small>Built with <a className={styles.underline} target="_blank" href="//facebook.github.io/react/">ReactJS</a> and <a className={styles.underline} target="_blank" href="//material-ui.com">Material-ui</a></small>
+            </p>
+          </section>
         </footer>
       </div>
     );
