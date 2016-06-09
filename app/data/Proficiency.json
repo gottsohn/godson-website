@@ -1,42 +1,32 @@
 [
   {
-   "key": 0,
    "language": "Agile Methodology",
    "score": 80
  }, {
-    "key": 1,
     "language": "Javascript",
     "score": 95
   }, {
-    "key": 2,
     "language": "PHP",
     "score": 80
   }, {
-    "key": 3,
     "language": "Node.js",
     "score": 90
   }, {
-    "key": 4,
     "language": "Swift / iOS",
     "score": 80
   }, {
-    "key": 5,
     "language": "ReactJS",
     "score": 75
   }, {
-    "key": 6,
     "language": "AgularJS 1",
     "score": 85
   }, {
-    "key": 7,
     "language": "Python 2.x",
     "score": 80
   }, {
-    "key": 8,
     "language": "HTML5 + CSS3",
     "score": 99.9
   }, {
-    "key": 9,
     "language": "German",
     "score": 25
   }
