@@ -8,9 +8,9 @@ export default class SocialMediaLink extends React.Component {
   }
 
   render() {
-    const renderItem = (item) => {
+    const renderItem = (item, index) => {
       return (
-          <a href={item.url} target="blank" className={styles.icon}>
+          <a key={index} href={item.url} target="blank" className={styles.icon}>
             <i className={classnames('fa', item.className, 'fa-3x')}></i>
             <br/>
             <span> {item.username}</span>

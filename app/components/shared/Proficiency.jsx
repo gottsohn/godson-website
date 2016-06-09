@@ -8,9 +8,9 @@ export default class Proficiency extends React.Component {
   }
 
   render() {
-    const renderItem = (item) => {
+    const renderItem = (item, index) => {
       return (
-        <div className={styles.proficiency}>
+        <div key={index} className={styles.proficiency}>
           <span>{item.language}</span>
           <LinearProgress mode="determinate" value={item.score} color="#fff"/>
         </div>
