@@ -39,19 +39,19 @@ export default class Home extends React.Component {
               <li>A couple of Calisthenic moves</li>
             </ul>
           </section>
-          <section className={styles.section}>
+          <section className={styles.section} id="socialmedia">
             <h4>Sozial / Social</h4>
             <SocialMediaLink items={socialMediaLinks} />
           </section>
-          <section className={styles.section}>
+          <section className={styles.section} id="proficiency">
             <h4>Können / Proficiency</h4>
             <Proficiency items={proficiency} />
           </section>
-          <section className={styles.section}>
+          <section className={styles.section} id="portfolio">
             <h4>Portefeuille / Portfolio</h4>
             <Portfolio items={portfolio} />
           </section>
-          <section className={styles.section}>
+          <section className={styles.section} id="opensource">
             <h4>Open Source</h4>
             <Portfolio items={opensource} />
           </section>
