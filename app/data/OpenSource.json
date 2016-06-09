@@ -1,12 +1,12 @@
 [{
   "title": "iOS Swift Boiler Plate",
-  "urls": ["https://github.com/gottshon/ios-swift-boiler.git"],
+  "urls": ["https://github.com/gottsohn/ios-swift-boiler.git"],
   "description": "A boiler plate written in Swift 2.2 with Facebook and Twitter Authentication. Employing CocoaPods package manager, and a fancy login page with a background video, you get a modern template to kick off your iOS applicaiton.",
   "stack": "iOS, Swift, CocoaPods",
   "image": "http://1.bp.blogspot.com/-6M11X8NAYr4/T-PtJnuJkhI/AAAAAAAABR0/EBLeSP0ShOA/s1600/Open-Source-security-software.png"
 }, {
   "title": "Standort [WIP]",
-  "urls": ["https://github.com/gottshon/standort.git"],
+  "urls": ["https://github.com/gottsohn/standort.git"],
   "description": "Ein Standort dienst gebaut mit Node (Express), React und Firebase. A location service built with Node, React and Firebase.",
   "stack": "iOS, Swift, CocoaPods",
   "image": "http://1.bp.blogspot.com/-6M11X8NAYr4/T-PtJnuJkhI/AAAAAAAABR0/EBLeSP0ShOA/s1600/Open-Source-security-software.png"
