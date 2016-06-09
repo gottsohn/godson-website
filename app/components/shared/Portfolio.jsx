@@ -18,6 +18,7 @@ export default class Portfolio extends React.Component {
   }
 
   render() {
+    this.setState({item: null});
     const renderItem = (item, index) => {
       const boundTap = this.handleClick.bind(this, index);
       return (
