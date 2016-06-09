@@ -1,0 +1,28 @@
+[
+  {
+    "key": 1,
+    "username": "fisicallyfeet",
+    "className": "fa-twitter",
+    "url": "//twitter.com/fisicallyfeet"
+  }, {
+    "key": 2,
+    "username": "gottsohn",
+    "className": "fa-github",
+    "url": "//github.com/gottshon"
+  }, {
+    "key": 3,
+    "username": "godsonukpere",
+    "className": "fa-linkedin",
+    "url": "//linkedin.com/in/godsonukpere"
+  }, {
+    "key": 4,
+    "username": "gottsohn",
+    "className": "fa-medium",
+    "url": "//medium.com/@gottshon"
+  }, {
+    "key": 5,
+    "username": "fisicallyfeet",
+    "className": "fa-instagram",
+    "url": "//instagram.com/fisicallyfeet"
+  }
+]
