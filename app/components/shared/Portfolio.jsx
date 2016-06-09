@@ -9,7 +9,7 @@ export default class Portfolio extends React.Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      item: null
+      item: this.props.items[0]
     };
   }
 
@@ -18,7 +18,6 @@ export default class Portfolio extends React.Component {
   }
 
   render() {
-    //this.setState({item: null});
     const renderItem = (item, index) => {
       const boundTap = this.handleClick.bind(this, index);
       return (
@@ -39,7 +38,7 @@ export default class Portfolio extends React.Component {
 
     return (
       <div>
-          {this.state.item ? <Dialog item={this.state.item} /> : null}
+          <Dialog item={this.state.item} />
           <div className={styles.portfolio}>
             <List>
               {this.props.items.map(renderItem)}
