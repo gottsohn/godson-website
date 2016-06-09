@@ -1,9 +1,13 @@
 # website-godson
+Visit website [here](https://gottsohn.github.io).
 
 ## Overview
+ - React
+ - Material UI
+ - Webpack 
 
 ### React by default
-The project runs with React by default and hot replacement of changes to the modules. Currently it is on 0.14.3.
+The project runs with React by default and hot replacement of changes to the modules.
 
 ### CSS Modules
 CSS files loaded into components are locally scoped and you can point to class names with javascript. You can also compose classes together, also from other files. These are also hot loaded. Read more about them [here](http://glenmaddern.com/articles/css-modules).
