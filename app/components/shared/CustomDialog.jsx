@@ -18,8 +18,6 @@ export default class CustomDialog extends React.Component {
     if (this.props.item) {
       this.handleOpen();
     }
-
-    console.log('new props just in');
   }
 
   handleOpen() {
@@ -40,6 +38,7 @@ export default class CustomDialog extends React.Component {
       </div>
     );
   }
+
   render() {
     const actions = [
       <FlatButton
@@ -50,6 +49,7 @@ export default class CustomDialog extends React.Component {
           primary
       />
     ];
+
     return (
       <Dialog
           actions={actions}
@@ -84,5 +84,11 @@ export default class CustomDialog extends React.Component {
 }
 
 CustomDialog.propTypes = {
-  item: React.PropTypes.node.isRequired
+  item: React.PropTypes.shape({
+    description: React.PropTypes.string.isRequired,
+    image: React.PropTypes.string.isRequired,
+    title: React.PropTypes.string.isRequired,
+    stack: React.PropTypes.string.isRequired,
+    urls: React.PropTypes.arrayOf(React.PropTypes.string.isRequired)
+  })
 };

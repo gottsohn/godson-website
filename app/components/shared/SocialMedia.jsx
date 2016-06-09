@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import styles from '../../App.css';
 
-export default class SocialMediaLink extends React.Component {
+export default class SocialMedia extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -26,7 +26,7 @@ export default class SocialMediaLink extends React.Component {
   }
 }
 
-SocialMediaLink.propTypes = {
+SocialMedia.propTypes = {
   items: React.PropTypes.arrayOf(
       React.PropTypes.shape({
         className: React.PropTypes.string.isRequired,
