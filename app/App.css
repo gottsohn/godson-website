@@ -90,3 +90,28 @@ ul.list > li {
 .headerTitle {
   font-size: 4.65em;
 }
+
+.underline {
+  text-decoration: underline;
+}
+
+.marginRight {
+  margin: 0 5px 0 0;
+}
+
+.inlineBlock {
+  display: inline-block;
+  margin: 0 15px 0 0;
+  vertical-align: top;
+}
+
+.itemImage {
+  max-height: 128px;
+  padding:5px;
+  border-radius: 50%;
+  background-color: #ececec;
+}
+
+.paddingTop {
+  padding: 10px 0;
+}
