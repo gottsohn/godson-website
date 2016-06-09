@@ -28,7 +28,6 @@ export default class CustomDialog extends React.Component {
   }
 
   handleClose() {
-    this.props.item.title = '';
     this.setState({
       open: false
     });
