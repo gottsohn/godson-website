@@ -22,16 +22,16 @@ export default class Portfolio extends React.Component {
       const boundTap = this.handleClick.bind(this, index);
       return (
           <ListItem
-            leftAvatar={<Avatar src={item.image} />}
-            onTouchTap={boundTap}
-            key={index}
-            primaryText={<b style={{color: '#fff'}}>{item.title}</b>}
-            secondaryText={
-              <p style={{color: '#fff'}}>
-                {item.description}
-              </p>
-            }
-            secondaryTextLines={2}
+              key={index}
+              leftAvatar={<Avatar src={item.image} />}
+              onTouchTap={boundTap}
+              primaryText={<b style={{color: '#fff'}}>{item.title}</b>}
+              secondaryText={
+                <p style={{color: '#fff'}}>
+                  {item.description}
+                </p>
+              }
+              secondaryTextLines={2}
           />
       );
     };
@@ -50,5 +50,5 @@ export default class Portfolio extends React.Component {
 }
 
 Portfolio.propTypes = {
-  items: React.PropTypes.array.isRequired
+  items: React.PropTypes.node.isRequired
 };

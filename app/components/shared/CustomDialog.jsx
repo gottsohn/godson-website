@@ -41,25 +41,26 @@ export default class CustomDialog extends React.Component {
   render() {
     const actions = [
       <FlatButton
-        label="Schließen"
-        primary
-        keyboardFocused
-        onTouchTap={this.handleClose}
+          key="0"
+          keyboardFocused
+          label="Schließen"
+          onTouchTap={this.handleClose}
+          primary
       />
     ];
     return (
       <Dialog
-        title={this.props.item.title}
-        actions={actions}
-        modal={false}
-        open={this.state.open}
-        autoScrollBodyContent
-        onRequestClose={this.handleClose}
+          actions={actions}
+          autoScrollBodyContent
+          modal={false}
+          onRequestClose={this.handleClose}
+          open={this.state.open}
+          title={this.props.item.title}
       >
         <div className={styles.paddingTop}>
           <div>
             <div className={styles.inlineBlock}>
-              <img className={styles.itemImage} src={this.props.item.image} alt={this.props.item.title} />
+              <img alt={this.props.item.title} className={styles.itemImage} src={this.props.item.image}/>
             </div>
             <div className={styles.inlineBlock} style={{maxWidth: '75%'}}>
               <h5>Links</h5>
@@ -78,5 +79,5 @@ export default class CustomDialog extends React.Component {
 }
 
 CustomDialog.propTypes = {
-  item: React.PropTypes.object.isRequired
+  item: React.PropTypes.node.isRequired
 };

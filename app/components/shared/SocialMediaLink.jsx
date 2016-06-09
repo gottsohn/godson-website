@@ -10,7 +10,7 @@ export default class SocialMediaLink extends React.Component {
   render() {
     const renderItem = (item, index) => {
       return (
-          <a key={index} href={item.url} target="blank" className={styles.icon}>
+          <a className={styles.icon} href={item.url} key={index} target="blank">
             <i className={classnames('fa', item.className, 'fa-3x')}></i>
             <br/>
             <span> {item.username}</span>
@@ -27,5 +27,5 @@ export default class SocialMediaLink extends React.Component {
 }
 
 SocialMediaLink.propTypes = {
-  items: React.PropTypes.array.isRequired
+  items: React.PropTypes.node.isRequired
 };

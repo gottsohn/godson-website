@@ -59,7 +59,7 @@ export default class Home extends React.Component {
         <footer>
           <section>
             <p>
-              <small>Built with <a className={styles.underline} target="_blank" href="//facebook.github.io/react/">ReactJS</a> and <a className={styles.underline} target="_blank" href="//material-ui.com">Material-ui</a></small>
+              <small>Built with <a className={styles.underline} href="//facebook.github.io/react/" target="_blank">ReactJS</a> and <a className={styles.underline} href="//material-ui.com"  target="_blank">Material-ui</a></small>
             </p>
           </section>
         </footer>

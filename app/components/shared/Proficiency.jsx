@@ -10,9 +10,9 @@ export default class Proficiency extends React.Component {
   render() {
     const renderItem = (item, index) => {
       return (
-        <div key={index} className={styles.proficiency}>
+        <div className={styles.proficiency} key={index}>
           <span>{item.language}</span>
-          <LinearProgress mode="determinate" value={item.score} color="#fff"/>
+          <LinearProgress color="#fff" mode="determinate" value={item.score}/>
         </div>
       );
     };
@@ -26,5 +26,5 @@ export default class Proficiency extends React.Component {
 }
 
 Proficiency.propTypes = {
-  items: React.PropTypes.array.isRequired
+  items: React.PropTypes.node.isRequired
 };
