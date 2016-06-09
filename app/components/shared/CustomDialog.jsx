@@ -18,6 +18,8 @@ export default class CustomDialog extends React.Component {
     if (this.props.item) {
       this.handleOpen();
     }
+
+    console.log('new props just in');
   }
 
   handleOpen() {
@@ -68,8 +70,11 @@ export default class CustomDialog extends React.Component {
                 {this.props.item.urls.map(this.renderUrl)}
               </div>
               <br/>
+              <h5>Stack</h5>
+              <div><small><i className={classnames('fa', 'fa-code', styles.marginRight)}></i><code>{this.props.item.stack}</code></small></div>
+              <br/>
               <h5>Description</h5>
-              <div>{this.props.item.description}</div>
+              <div className={styles.descriptionText}>{this.props.item.description}</div>
             </div>
           </div>
         </div>
