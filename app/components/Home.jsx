@@ -1,20 +1,42 @@
 import React from 'react';
+import CircularProgress from 'material-ui/CircularProgress';
 import styles from '../App.css';
 import classnames from 'classnames';
-import SocialMediaLink from './shared/SocialMediaLink.jsx';
+import SocialMedia from './shared/SocialMedia.jsx';
 import Proficiency from './shared/Proficiency.jsx';
 import Portfolio from './shared/Portfolio.jsx';
 import Footer from './shared/Footer.jsx';
 
 // Data imports
-import socialMediaLinks from '../data/SocialMediaLinks.json';
-import portfolio from '../data/Portfolio.json';
-import proficiency from '../data/Proficiency.json';
-import opensource from '../data/OpenSource.json';
+import firebase from '../data/db.js';
 
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
+    this.getData = this.getData.bind(this);
+    this.state = {
+      portfolio: null,
+      proficiency: null,
+      opensource: null,
+      socialmedia: null
+    };
+  }
+
+  componentDidMount() {
+    this.getData('portfolio');
+    this.getData('proficiency');
+    this.getData('socialmedia');
+    this.getData('opensource');
+  }
+
+  getData(key) {
+    firebase.database.ref(key).on('value', (snap) => {
+      if (snap.val()) {
+        let state = {};
+        state[key] = snap.val();
+        this.setState(state);
+      }
+    });
   }
 
   getProductionYears() {
@@ -47,19 +69,19 @@ export default class Home extends React.Component {
           </section>
           <section className={styles.section} id="socialmedia">
             <h4>Sozial / Social</h4>
-            <SocialMediaLink items={socialMediaLinks} />
+            {this.state.socialmedia ? <SocialMedia items={this.state.socialmedia}/> : <CircularProgress color="#fff" size={1} />}
           </section>
           <section className={styles.section} id="proficiency">
             <h4>Können / Proficiency</h4>
-            <Proficiency items={proficiency} />
+            {this.state.proficiency ? <Proficiency items={this.state.proficiency}/> : <CircularProgress color="#fff" size={1} />}
           </section>
           <section className={styles.section} id="portfolio">
             <h4>Portefeuille / Portfolio</h4>
-            <Portfolio items={portfolio} />
+            {this.state.portfolio ? <Portfolio items={this.state.portfolio} /> : <CircularProgress color="#fff" size={1} />}
           </section>
           <section className={styles.section} id="opensource">
             <h4>Open Source</h4>
-            <Portfolio items={opensource} />
+            {this.state.opensource ? <Portfolio items={this.state.opensource}/> : <CircularProgress color="#fff" size={1} />}
           </section>
         </main>
         <Footer />
