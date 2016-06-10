@@ -17,6 +17,10 @@ export default class Footer extends React.Component {
         <section>
           <small>View the <Anchor href="//github.com/gottsohn/godson-website" label="source code"/>.</small>
         </section>
+        <section>
+          <br/>
+          <small>Here's my <Anchor href="//godson-yeet.rhcloud.com" label="old site" /></small>
+        </section>
       </footer>
     );
   }

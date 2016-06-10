@@ -1,15 +1,18 @@
 import React from 'react';
-import CircularProgress from 'material-ui/CircularProgress';
-import styles from '../App.css';
 import classnames from 'classnames';
+import CircularProgress from 'material-ui/CircularProgress';
+import Paper from 'material-ui/Paper';
+import styles from '../App.css';
+
 import SocialMedia from './shared/SocialMedia.jsx';
 import Proficiency from './shared/Proficiency.jsx';
 import Portfolio from './shared/Portfolio.jsx';
 import Footer from './shared/Footer.jsx';
-import Paper from 'material-ui/Paper';
+import Anchor from './shared/Anchor.jsx';
+
 
 // Data imports
-import firebase from '../data/db.js';
+import firebase from '../database';
 
 export default class Home extends React.Component {
   constructor(props) {

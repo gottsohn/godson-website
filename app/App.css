@@ -1,5 +1,5 @@
 body {
-  font: normal 1em Roboto, sans-serif;
+  font: 500 1em Raleway;
   color: #fff;
   background: #009090 center repeat;
 }
@@ -10,12 +10,13 @@ h3,
 h4,
 h5,
 p {
+  font-family: Raleway;
   margin: 5px 0;
   padding: 0;
 }
 
 .container {
-  padding: 20px;
+  padding: 0 20px 20px;
   text-align: center;
 }
 
@@ -96,7 +97,9 @@ ul.list > li {
 }
 
 .headerTitle {
-  font:100 4.95em Arial;
+  font:100 4.8em Raleway;
+  text-shadow: 3px 5px 10px #333;
+  margin: 0;
 }
 
 .underline {
@@ -125,5 +128,5 @@ ul.list > li {
 }
 
 .descriptionText {
-  font: 100 0.9em Roboto, Tahoma, Verdana, 'sans-serif';
+  font: 100 0.9em Raleway, Tahoma, Verdana, 'sans-serif';
 }
