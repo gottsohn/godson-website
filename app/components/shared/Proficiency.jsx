@@ -12,7 +12,7 @@ export default class Proficiency extends React.Component {
       return (
         <div className={styles.proficiency} key={index}>
           <span>{item.language}</span>
-          <LinearProgress color="#fff" mode="determinate" value={item.score}/>
+          <LinearProgress color="#009090" mode="determinate" value={item.score}/>
         </div>
       );
     };

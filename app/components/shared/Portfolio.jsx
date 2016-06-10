@@ -33,9 +33,9 @@ export default class Portfolio extends React.Component {
               key={index}
               leftAvatar={<Avatar src={item.image} />}
               onTouchTap={boundTap}
-              primaryText={<b style={{color: '#fff'}}>{item.title}</b>}
+              primaryText={<b style={{color: '#333'}}>{item.title}</b>}
               secondaryText={
-                <p style={{color: '#fff'}}>
+                <p style={{color: '#777'}}>
                   {item.description}
                 </p>
               }

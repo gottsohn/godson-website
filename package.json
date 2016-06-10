@@ -29,6 +29,7 @@
   "dependencies": {
     "babel-cli": "^6.4.0",
     "classnames": "^2.2.5",
+    "file-loader": "^0.8.5",
     "firebase": "^3.0.4",
     "font-awesome": "^4.6.3",
     "material-ui": "^0.15.0",
