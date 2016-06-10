@@ -37,6 +37,10 @@ module.exports = {
         "presets": ["react", "es2015", "stage-0", "react-hmre"]
       }
     }, {
+      test: /(\.png|\.jpe?g|\.gif)$/,
+      exclude: /node_modules/,
+      loader: 'file'
+    }, {
       test: /\.json?$/,
       loader: 'json'
     }, {
