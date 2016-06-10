@@ -46,10 +46,6 @@ module.exports = {
         "presets": ["es2015", "stage-0", "react"]
       }
     }, {
-      test: /(\.png|\.jpe?g|\.gif)$/,
-      exclude: /node_modules/,
-      loader: 'file'
-    }, {
       test: /\.json?$/,
       loader: 'json'
     }, {
