@@ -19,7 +19,7 @@ export default class Footer extends React.Component {
         </section>
         <section>
           <br/>
-          <small>Here's my <Anchor href="//godson-yeet.rhcloud.com" label="old site" /></small>
+          <small>Here's my <Anchor href="//godson-yeet.rhcloud.com" label="old site" />.</small>
         </section>
       </footer>
     );
