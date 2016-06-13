@@ -49,7 +49,7 @@ export default class CustomDialog extends React.Component {
       <FlatButton
           key="0"
           keyboardFocused
-          label="Schließen"
+          label="Close"
           onTouchTap={this.handleClose}
           primary
       />
