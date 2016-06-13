@@ -11,7 +11,7 @@ export default class Proficiency extends React.Component {
     const renderItem = (item, index) => {
       return (
         <div className={styles.proficiency} key={index}>
-          <span>{item.language}</span>
+          <span title={item.title}>{item.language}</span>
           <LinearProgress color="#009090" mode="determinate" value={item.score}/>
         </div>
       );

@@ -1,5 +1,5 @@
 body {
-  font: 500 1em Raleway;
+  font: 500 1em Raleway, 'Trebuchet MS';
   color: #fff;
   background: #009090 center repeat;
 }
@@ -42,11 +42,11 @@ a {
 }
 
 .proficiency {
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
 .proficiency > span {
-  width: 25%;
+  width: 35%;
   font-size: 0.8em;
   text-align: left;
 }
@@ -61,7 +61,7 @@ a {
 .proficiency > div {
   width: auto;
   display: inline-block !important;
-  max-width: 70%
+  max-width: 60%
 }
 
 .portfolio {
@@ -84,7 +84,8 @@ ul.list > li {
 
 .icon {
   display: inline-block;
-  margin: 2px 10px;
+  margin: 10px;
+  padding: 10px 0;
   transition-duration: 0.75s;
 }
 
@@ -104,6 +105,15 @@ ul.list > li {
 
 .underline {
   text-decoration: underline;
+}
+
+span.fancyAnim {
+  display: inline-block;
+  position: absolute;
+  width: 100px;
+  box-shadow: 2px 2px 10px #333;
+  animation: translate 5s infinite;
+  -webkit-animation: translate 5s infinite;
 }
 
 .marginRight {
@@ -129,4 +139,28 @@ ul.list > li {
 
 .descriptionText {
   font: 100 0.9em Raleway, Tahoma, Verdana, 'sans-serif';
+}
+
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.2; }
+    to { opacity: 1.0; }
+}
+
+@keyframes translate {
+    from { left: 10%; opacity: 0}
+    50% { left: 40%; opacity: 1}
+    to { left: 90%; opacity: 0}
+}
+
+@-webkit-keyframes translate {
+  from { left: 10%; opacity: 0}
+  50% { left: 40%; opacity: 1}
+  to { left: 90%; opacity: 0}
+}
+
+.blink {
+   animation:fade 1500ms infinite;
+    -webkit-animation:fade 1500ms infinite;
 }

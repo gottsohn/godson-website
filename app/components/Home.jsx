@@ -19,7 +19,8 @@ export default class Home extends React.Component {
       portfolio: null,
       proficiency: null,
       opensource: null,
-      socialmedia: null
+      socialmedia: null,
+      content: null
     };
   }
 
@@ -28,10 +29,11 @@ export default class Home extends React.Component {
     this.getData('proficiency');
     this.getData('socialmedia');
     this.getData('opensource');
+    this.getData('content');
   }
 
   getZDepth() {
-    return 5;
+    return 3;
   }
 
   getData(key) {
@@ -53,12 +55,13 @@ export default class Home extends React.Component {
       <div className={styles.container}>
         <main>
           <section className={styles.section}>
-            <h1 className={styles.headerTitle}>Godson Ukpere</h1>
+            <h1 className={styles.headerTitle}>Godson Ukpere<span className={styles.fancyAnim}>&nbsp;</span></h1>
           </section>
           <Paper className={classnames(styles.section, styles.sectionText)} rounded zDepth={this.getZDepth()}>
             <h4>Über / About</h4>
-            <p><small>I'm a trained Electrical Engineer(B.Eng) with a passion for calisthenics <img src="http://emojipedia-us.s3.amazonaws.com/cache/4a/d7/4ad7acf1055461c7bee61952af7b35e4.png" style={{height: '14px'}} title="abdomical muscles"/> and the soft skills of a Human Resource Manager. I've written production code for {this.getProductionYears()} years. I started out as a unaethestic nerd, but this though <img src="http://emojipedia-us.s3.amazonaws.com/cache/fc/67/fc6749acb440bde74cdde660c796f1e1.png" style={{height: '14px'}}/>. I work with NodeJS, PHP and Python servers, Angular and React fends, native mobile SDKs (Java / Android and Swift / iOS). <Anchor href="https://material.google.com/" label="Material Design"/> is bae.</small></p>
+            <p><small>A human with a passion for calisthenics <img src="http://emojipedia-us.s3.amazonaws.com/cache/4a/d7/4ad7acf1055461c7bee61952af7b35e4.png" style={{height: '14px'}} title="Ich haben abdominal muscles"/>. I've written production code for {this.getProductionYears()} years, started out as a unaethestic nerd, but this site though <img src="http://emojipedia-us.s3.amazonaws.com/cache/fc/67/fc6749acb440bde74cdde660c796f1e1.png" style={{height: '14px'}}/>. I work with NodeJS, PHP and Python servers, Angular or React JS for front end, native mobile SDKs (Java / Android and Swift / iOS). For UI/UX, <Anchor href="https://material.google.com/" label="Material Design"/> is bae. Lest I forget, my soft skill level, an astute Human Resource Manager <img src="http://emojipedia-us.s3.amazonaws.com/cache/fe/9f/fe9fd3657ed6faa5319f5357b2de48eb.png" style={{height: '14px'}} title="Boss"/>.</small></p>
             <p><small><img src="http://emojipedia-us.s3.amazonaws.com/cache/10/46/1046faae6fca73fff175423593ed5ef0.png" style={{height: '12px'}}/> Calisthenics und JavaScript über alle.</small></p>
+            {this.state.content ? <p><br/>{this.state.content.text}</p> : <CircularProgress color="#009090" size={0.2} title="Something might load here"/>}
             <br/>
             <h4>Kontakt / Contact</h4>
             <p><i className={classnames('fa', 'fa-envelope-o', styles.marginRight)}></i><a href='mailto:godson.ukpere@gmail.com'>godson.ukpere@gmail.com</a></p>
