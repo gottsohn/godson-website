@@ -110,10 +110,10 @@ ul.list > li {
 span.fancyAnim {
   display: inline-block;
   position: absolute;
-  width: 100px;
-  box-shadow: 2px 2px 10px #333;
-  animation: translate 5s infinite;
-  -webkit-animation: translate 5s infinite;
+  width: 64px;
+  box-shadow: 2px 2px 8px #333;
+  animation: translate 10s infinite;
+  -webkit-animation: translate 10s infinite;
 }
 
 .marginRight {
@@ -151,7 +151,7 @@ span.fancyAnim {
 @keyframes translate {
     from { left: 10%; opacity: 0}
     50% { left: 40%; opacity: 1}
-    to { left: 90%; opacity: 0}
+    to { left: 70%; opacity: 0}
 }
 
 @-webkit-keyframes translate {
