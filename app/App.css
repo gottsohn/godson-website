@@ -107,15 +107,6 @@ ul.list > li {
   text-decoration: underline;
 }
 
-span.fancyAnim {
-  display: inline-block;
-  position: absolute;
-  width: 64px;
-  box-shadow: 2px 2px 8px #333;
-  animation: translate 10s infinite;
-  -webkit-animation: translate 10s infinite;
-}
-
 .marginRight {
   margin: 0 5px 0 0;
 }
@@ -141,7 +132,6 @@ span.fancyAnim {
   font: 100 0.9em Raleway, Tahoma, Verdana, 'sans-serif';
 }
 
-
 @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.2; }
@@ -151,16 +141,19 @@ span.fancyAnim {
 @keyframes translate {
     from { left: 10%; opacity: 0}
     50% { left: 40%; opacity: 1}
-    to { left: 70%; opacity: 0}
-}
-
-@-webkit-keyframes translate {
-  from { left: 10%; opacity: 0}
-  50% { left: 40%; opacity: 1}
-  to { left: 90%; opacity: 0}
+    to { left: 80%; opacity: 0}
 }
 
 .blink {
-   animation:fade 1500ms infinite;
-    -webkit-animation:fade 1500ms infinite;
+   animation:fade 1.5s infinite;
+    -webkit-animation:fade 1.5s infinite;
+}
+
+span.fancyAnim {
+  display: inline-block;
+  position: absolute;
+  width: 56px;
+  opacity: 0;
+  animation: translate 5s infinite;
+  background-color: rgba(255, 255, 255, 0.15)
 }
