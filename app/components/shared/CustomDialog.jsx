@@ -66,7 +66,7 @@ export default class CustomDialog extends React.Component {
       >
         <div className={styles.paddingTop}>
           <div>
-            <div className={styles.inlineBlock}>
+            <div className={styles.inlineBlock} style={{maxWidth: '22%'}}>
               <img alt={this.props.item.title} className={styles.itemImage} src={this.props.item.image}/>
             </div>
             <div className={styles.inlineBlock} style={{maxWidth: '75%'}}>

@@ -20,6 +20,7 @@ export default class Home extends React.Component {
       proficiency: null,
       opensource: null,
       socialmedia: null,
+      developerAccounts: null,
       content: null
     };
   }
@@ -30,6 +31,7 @@ export default class Home extends React.Component {
     this.getData('socialmedia');
     this.getData('opensource');
     this.getData('content');
+    this.getData('developerAccounts');
   }
 
   getZDepth() {
@@ -75,20 +77,29 @@ export default class Home extends React.Component {
               <CircularProgress color="#009090" size={0.2} title="Something might load here"/>}
           </Paper>
           <Paper className={styles.section} id="socialmedia" rounded zDepth={this.getZDepth()}>
-            <h4>Social</h4>
+            <h4><p><small>{this.state.content? this.state.content.data.socialmedia.title : null}</small></p></h4>
+            <p><small>{this.state.content? this.state.content.data.socialmedia.text : null}</small></p>
             {this.state.socialmedia ? <SocialMedia items={this.state.socialmedia}/> : <CircularProgress color="#009090" size={0.5} />}
           </Paper>
           <Paper className={styles.section} id="proficiency" rounded zDepth={this.getZDepth()}>
-            <h4>Proficiency</h4>
+            <h4><p><small>{this.state.content? this.state.content.data.proficiency.title : null}</small></p></h4>
+            <p><small>{this.state.content? this.state.content.data.proficiency.text : null}</small></p>
             {this.state.proficiency ? <Proficiency items={this.state.proficiency}/> : <CircularProgress color="#009090" size={0.5} />}
           </Paper>
           <Paper className={styles.section} id="portfolio" rounded zDepth={this.getZDepth()}>
-            <h4>Portfolio</h4>
+            <h4><p><small>{this.state.content? this.state.content.data.portfolio.title : null}</small></p></h4>
+            <p><small>{this.state.content? this.state.content.data.portfolio.text : null}</small></p>
             {this.state.portfolio ? <Portfolio items={this.state.portfolio} /> : <CircularProgress color="#009090" size={0.5} />}
           </Paper>
           <Paper className={styles.section} id="opensource" rounded zDepth={this.getZDepth()}>
-            <h4>Open Source</h4>
+            <h4><p><small>{this.state.content? this.state.content.data.opensource.title : null}</small></p></h4>
+            <p><small>{this.state.content? this.state.content.data.opensource.text : null}</small></p>
             {this.state.opensource ? <Portfolio items={this.state.opensource}/> : <CircularProgress color="#009090" size={0.5} />}
+          </Paper>
+          <Paper className={styles.section} id="developer-account" rounded zDepth={this.getZDepth()}>
+            <h4><p><small>{this.state.content? this.state.content.data.developerAccount.title : null}</small></p></h4>
+            <p><small>{this.state.content? this.state.content.data.developerAccount.text : null}</small></p>
+            {this.state.developerAccounts ? <Portfolio items={this.state.developerAccounts}/> : <CircularProgress color="#009090" size={0.5} />}
           </Paper>
         </main>
         <Footer />
