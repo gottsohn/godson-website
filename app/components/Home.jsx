@@ -20,7 +20,7 @@ export default class Home extends React.Component {
       proficiency: null,
       opensource: null,
       socialmedia: null,
-      developerAccounts: null,
+      developerAccount: null,
       content: null
     };
   }
@@ -30,8 +30,8 @@ export default class Home extends React.Component {
     this.getData('proficiency');
     this.getData('socialmedia');
     this.getData('opensource');
+    this.getData('developerAccount');
     this.getData('content');
-    this.getData('developerAccounts');
   }
 
   getZDepth() {
@@ -99,7 +99,7 @@ export default class Home extends React.Component {
           <Paper className={styles.section} id="developer-account" rounded zDepth={this.getZDepth()}>
             <h4><p><small>{this.state.content? this.state.content.data.developerAccount.title : null}</small></p></h4>
             <p><small>{this.state.content? this.state.content.data.developerAccount.text : null}</small></p>
-            {this.state.developerAccounts ? <Portfolio items={this.state.developerAccounts}/> : <CircularProgress color="#009090" size={0.5} />}
+            {this.state.developerAccount ? <Portfolio items={this.state.developerAccount}/> : <CircularProgress color="#009090" size={0.5} />}
           </Paper>
         </main>
         <Footer />
