@@ -11,7 +11,7 @@ export default class Footer extends React.Component {
       <footer>
         <section>
           <p>
-            <small>Built with <Anchor href="//facebook.github.io/react/" label="ReactJS" />, <Anchor href="//firebase.google.com" label="Firebase" /> and <Anchor href="//material-ui.com" label="Material-ui"/></small>
+            <small>Built with <Anchor href="//facebook.github.io/react/" label="ReactJS" />, <Anchor href="//webpack.github.io" label="Webpack" />, <Anchor href="//firebase.google.com" label="Firebase" /> and <Anchor href="//material-ui.com" label="Material-ui"/></small>
           </p>
         </section>
         <section>
