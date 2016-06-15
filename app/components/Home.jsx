@@ -8,8 +8,8 @@ import SocialMedia from './shared/SocialMedia.jsx';
 import Proficiency from './shared/Proficiency.jsx';
 import Portfolio from './shared/Portfolio.jsx';
 import Footer from './shared/Footer.jsx';
+import HomeSection from './shared/HomeSection.jsx';
 import firebase from '../database';
-import Anchor from './shared/Anchor.jsx';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -34,9 +34,7 @@ export default class Home extends React.Component {
     this.getData('content');
   }
 
-  getZDepth() {
-    return 3;
-  }
+  getZDepth = () => 3
 
   getData(key) {
     firebase.database.ref(key).on('value', (snap) => {
@@ -48,10 +46,6 @@ export default class Home extends React.Component {
     });
   }
 
-  getProductionYears() {
-    return (new Date().getFullYear()) - 2010;
-  }
-
   render() {
     return (
       <div className={styles.container}>
@@ -60,21 +54,7 @@ export default class Home extends React.Component {
             <h1 className={styles.headerTitle}>Godson Ukpere<span className={styles.fancyAnim}>&nbsp;</span></h1>
           </section>
           <Paper className={classnames(styles.section, styles.sectionText)} rounded zDepth={this.getZDepth()}>
-            <h4>About</h4>
-            <p><small>A human with a passion for calisthenics <img src="http://emojipedia-us.s3.amazonaws.com/cache/4a/d7/4ad7acf1055461c7bee61952af7b35e4.png" style={{height: '14px'}} title="Ich haben abdominal muscles"/>. I've written production code for {this.getProductionYears()} years, started out as a unaethestic nerd, but this site though <img src="http://emojipedia-us.s3.amazonaws.com/cache/fc/67/fc6749acb440bde74cdde660c796f1e1.png" style={{height: '14px'}}/>. I work with NodeJS, PHP and Python servers, Angular or React JS for front end, native mobile SDKs (Java / Android and Swift / iOS). For UI/UX, <Anchor href="https://material.google.com/" label="Material Design"/> is bae. Lest I forget, my soft skill level, an astute Human Resource Manager <img src="http://emojipedia-us.s3.amazonaws.com/cache/fe/9f/fe9fd3657ed6faa5319f5357b2de48eb.png" style={{height: '14px'}} title="Boss"/>.</small></p>
-            <p><small><img src="http://emojipedia-us.s3.amazonaws.com/cache/10/46/1046faae6fca73fff175423593ed5ef0.png" style={{height: '12px'}}/> Calisthenics und JavaScript über alle.</small></p>
-            <br/>
-            <h4>Contact</h4>
-            <p><i className={classnames('fa', 'fa-envelope-o', styles.marginRight)}></i><a href='mailto:godson.ukpere@gmail.com'>godson.ukpere@gmail.com</a></p>
-            <p><i className={classnames('fa', 'fa-phone', styles.marginRight)}></i><a href='tel:+234-809-613-2990'>+234-809-613-2990</a></p>
-            <p><i className={classnames('fa', 'fa-skype', styles.marginRight)}></i><a href='skype:godson.ukpere'>godson.ukpere</a></p>
-            <br/>
-            {this.state.content ?
-              <div>
-                <h4>{this.state.content.title}</h4>
-                <p><small>{this.state.content.text}</small></p>
-              </div> :
-              <CircularProgress color="#009090" size={0.2} title="Something might load here"/>}
+            <HomeSection content={this.state.content} />
           </Paper>
           <Paper className={styles.section} id="socialmedia" rounded zDepth={this.getZDepth()}>
             <h4><p><small>{this.state.content? this.state.content.data.socialmedia.title : null}</small></p></h4>
