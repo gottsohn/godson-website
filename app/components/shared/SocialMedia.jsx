@@ -10,10 +10,17 @@ export default class SocialMedia extends React.Component {
   render() {
     const renderItem = (item, index) => {
       return (
-          <a className={styles.icon} href={item.url} key={index} target="blank">
+          <a
+              className={styles.icon}
+              href={item.url}
+              key={index}
+              style={{fontSize: `${5/this.props.items.length}em`}}
+              target="blank"
+              title={item.title}
+          >
             <i className={classnames('fa', item.className, 'fa-3x')}></i>
             <br/>
-            <span> {item.username}</span>
+            <span>{item.username}</span>
           </a>
       );
     };
