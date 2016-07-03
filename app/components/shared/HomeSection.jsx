@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import CircularProgress from 'material-ui/CircularProgress';
+import Loading from './Loading.jsx';
 
 import Anchor from './Anchor.jsx';
 import styles from '../../App.css';
@@ -31,7 +31,7 @@ export default class HomeSection extends React.Component {
             <h4>{this.props.content.title}</h4>
             <p><small>{this.props.content.text}</small></p>
           </div> :
-          <CircularProgress color="#009090" size={0.2} title="Something might load here"/>
+          <Loading size={0.2} title="Something might load here"/>
         }
       </div>
     );
