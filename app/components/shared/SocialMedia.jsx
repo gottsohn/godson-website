@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import styles from '../../App.css';
+import ReactTooltip from 'react-tooltip';
 
 export default class SocialMedia extends React.Component {
   constructor(props) {
@@ -12,11 +13,11 @@ export default class SocialMedia extends React.Component {
       return (
           <a
               className={styles.icon}
+              data-tip={item.title}
               href={item.url}
               key={index}
               style={{fontSize: `${5/this.props.items.length}em`}}
               target="blank"
-              title={item.title}
           >
             <i className={classnames('fa', item.className, 'fa-3x')}></i>
             <br/>
@@ -28,6 +29,7 @@ export default class SocialMedia extends React.Component {
     return (
       <div>
         {this.props.items.map(renderItem)}
+        <ReactTooltip delayShow={250} />
       </div>
     );
   }
