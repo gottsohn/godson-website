@@ -1,6 +1,9 @@
 import React from 'react';
-import styles from '../../App.css';
+import ReactTooltip from 'react-tooltip';
 import LinearProgress from 'material-ui/LinearProgress';
+
+import styles from '../../App.css';
+
 
 export default class Proficiency extends React.Component {
   constructor(props) {
@@ -11,8 +14,8 @@ export default class Proficiency extends React.Component {
     const renderItem = (item, index) => {
       return (
         <div className={styles.proficiency} key={index}>
-          <span title={item.title}>{item.language}</span>
-          <LinearProgress color="#009090" mode="determinate" value={item.score}/>
+          <span data-tip={item.title}>{item.language}</span>
+          <LinearProgress color="#555" mode="determinate" value={item.score}/>
         </div>
       );
     };
@@ -20,6 +23,7 @@ export default class Proficiency extends React.Component {
     return (
       <div>
         {this.props.items.map(renderItem)}
+        <ReactTooltip delayShow={250} />
       </div>
     );
   }

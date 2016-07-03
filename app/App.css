@@ -90,7 +90,13 @@ ul.list > li {
 }
 
 .icon:hover {
-  color: #009090;
+  color: #bbb;
+}
+
+.emoji {
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .icon > span {
@@ -99,7 +105,7 @@ ul.list > li {
 
 .headerTitle {
   font:100 4.8em Raleway;
-  text-shadow: 3px 5px 10px #333;
+  text-shadow: 2px 2px 5px #333;
   margin: 0;
 }
 

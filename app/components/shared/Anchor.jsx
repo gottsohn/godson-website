@@ -8,7 +8,13 @@ export default class Anchor extends React.Component {
 
   render() {
     return (
-      <a className={underline} href={this.props.href} target={this.props.target || '_blank'}>{this.props.label}</a>
+      <a
+          className={underline}
+          href={this.props.href}
+          target={this.props.target || '_blank'}
+      >
+        {this.props.label}
+      </a>
     );
   }
 }
