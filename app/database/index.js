@@ -1,5 +1,4 @@
-import firebase from 'firebase';
-
+const firebase = require('firebase');
 const config = {
   apiKey: 'AIzaSyB4Oonfiwe-Q4YCLF05w2XRGd_Sr1svaaA',
   authDomain: 'gulp-boiler.firebaseapp.com',
@@ -8,6 +7,6 @@ const config = {
 };
 
 const app = firebase.initializeApp(config);
-export default {
+module.exports = {
   database: app.database()
 };
