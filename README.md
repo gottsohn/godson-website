@@ -6,15 +6,16 @@
 [![Material UI Version][material-ui-image]][material-ui-url]
 [![License][license-image]][license-url]
 
+[![Build Status](https://semaphoreci.com/api/v1/godson/godson-website/branches/master/shields_badge.svg)](https://semaphoreci.com/godson/godson-website)
+[![Code Climate](https://codeclimate.com/github/gottsohn/godson-website/badges/gpa.svg)](https://codeclimate.com/github/gottsohn/godson-website)
+[![Test Coverage](https://codeclimate.com/github/gottsohn/godson-website/badges/coverage.svg)](https://codeclimate.com/github/gottsohn/godson-website/coverage)
+
+
 Visit website [here](https://gottsohn.github.io).
 
 ## Overview
- - React
- - Material UI
- - Webpack
-
-### React by default
-The project runs with React by default and hot replacement of changes to the modules.
+### React
+The project runs with React and hot replacement of changes to the modules.
 
 ### CSS Modules
 CSS files loaded into components are locally scoped and you can point to class names with javascript. You can also compose classes together, also from other files. These are also hot loaded. Read more about them [here](http://glenmaddern.com/articles/css-modules).
