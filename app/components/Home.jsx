@@ -24,6 +24,7 @@ export default class Home extends React.Component {
       socialmedia: null,
       developerAccount: null,
       content: null,
+      message: '',
       sections: [null, null, null, null]
     };
   }
@@ -50,7 +51,8 @@ export default class Home extends React.Component {
       });
     } else {
       this.setState({
-        message: 'Unable to fetch data from Firebase'
+        message:
+          `${this.state.message || ''}\nNein wert einstellung für datenbank ref`
       });
     }
   }
@@ -63,6 +65,11 @@ export default class Home extends React.Component {
         let state = {};
         state[key] = snap.val();
         this.setState(state);
+      } else {
+        this.setState({
+          message: `${this.state.message || ''}` +
+            `\nKeine wert für daten taste: '${key}'`
+        });
       }
     });
   }
@@ -115,6 +122,19 @@ export default class Home extends React.Component {
           </section>
           <Paper className={classnames(styles.section, styles.sectionText)} rounded zDepth={this.getZDepth()}>
             <HomeSection content={this.state.content} />
+            {
+              this.state.message ?
+                <h2>
+                  <i
+                      className={classnames('fa', 'fa-warning')}
+                      style={{color: 'red'}}
+                  >
+                  </i>
+                  <br />
+                  <code>{this.state.message}</code>
+                </h2>
+                : null
+            }
           </Paper>
           {this.state.sections.map(this.createSection)}
         </main>
