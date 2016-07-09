@@ -15,35 +15,102 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.getData = this.getData.bind(this);
+    this.getDataOrder = this.getDataOrder.bind(this);
+    this.createSection = this.createSection.bind(this);
     this.state = {
       portfolio: null,
       proficiency: null,
       opensource: null,
       socialmedia: null,
       developerAccount: null,
-      content: null
+      content: null,
+      message: '',
+      sections: [null, null, null, null]
     };
   }
 
   componentDidMount() {
-    this.getData('portfolio');
-    this.getData('proficiency');
-    this.getData('socialmedia');
-    this.getData('opensource');
-    this.getData('developerAccount');
+    firebase.database.ref('content/order').on('value', this.getDataOrder);
     this.getData('content');
+  }
+
+  componentDidWillUnMount() {
+    firebase.database.ref('data/order').off('value');
+    this.state.sections.forEach((key) =>
+      !key || firebase.database.ref(key).off('value'));
   }
 
   getZDepth = () => 2
 
+  getDataOrder(snap) {
+    const data = snap.val();
+    if (data) {
+      data.forEach(this.getData);
+      this.setState({
+        sections: data
+      });
+    } else {
+      this.setState({
+        message:
+          `${this.state.message || ''}\nNein wert einstellung für datenbank ref`
+      });
+    }
+  }
+
   getData(key) {
-    firebase.database.ref(key).on('value', (snap) => {
+    const ref = firebase.database.ref(key);
+    ref.off('value');
+    ref.on('value', (snap) => {
       if (snap.val()) {
         let state = {};
         state[key] = snap.val();
         this.setState(state);
+      } else {
+        this.setState({
+          message: `${this.state.message || ''}` +
+            `\nKeine wert für daten taste: '${key}'`
+        });
       }
     });
+  }
+
+  createSection(key, index) {
+    if (key && this.state[key] && this.state.content) {
+      let ComponentData;
+      switch (this.state.content.data[key].type) {
+        case 'portfolio':
+          ComponentData = Portfolio;
+          break;
+        case 'socialmedia':
+          ComponentData = SocialMedia;
+          break;
+        case 'proficiency':
+          ComponentData = Proficiency;
+          break;
+        default:
+          ComponentData = null;
+      }
+
+      if (ComponentData) {
+        return (
+          <Paper className={styles.section} id="developer-account" key={index} rounded zDepth={this.getZDepth()}>
+            <h4><p><small>{this.state.content? this.state.content.data[key].title : null}</small></p></h4>
+            <p><small>{this.state.content? this.state.content.data[key].text : null}</small></p>
+            {
+              this.state[key] && ComponentData ?
+              <ComponentData items={this.state[key]}/> :
+              <Loading />
+            }
+          </Paper>
+        );
+      }
+    }
+
+    return (
+      <Paper className={styles.section} key={index} rounded>
+        <Loading size={1}/>
+      </Paper>
+    );
   }
 
   render() {
@@ -55,32 +122,21 @@ export default class Home extends React.Component {
           </section>
           <Paper className={classnames(styles.section, styles.sectionText)} rounded zDepth={this.getZDepth()}>
             <HomeSection content={this.state.content} />
+            {
+              this.state.message ?
+                <h2>
+                  <i
+                      className={classnames('fa', 'fa-warning')}
+                      style={{color: 'red'}}
+                  >
+                  </i>
+                  <br />
+                  <code>{this.state.message}</code>
+                </h2>
+                : null
+            }
           </Paper>
-          <Paper className={styles.section} id="socialmedia" rounded zDepth={this.getZDepth()}>
-            <h4><p><small>{this.state.content? this.state.content.data.socialmedia.title : null}</small></p></h4>
-            <p><small>{this.state.content? this.state.content.data.socialmedia.text : null}</small></p>
-            {this.state.socialmedia ? <SocialMedia items={this.state.socialmedia}/> : <Loading />}
-          </Paper>
-          <Paper className={styles.section} id="proficiency" rounded zDepth={this.getZDepth()}>
-            <h4><p><small>{this.state.content? this.state.content.data.proficiency.title : null}</small></p></h4>
-            <p><small>{this.state.content? this.state.content.data.proficiency.text : null}</small></p>
-            {this.state.proficiency ? <Proficiency items={this.state.proficiency}/> : <Loading />}
-          </Paper>
-          <Paper className={styles.section} id="portfolio" rounded zDepth={this.getZDepth()}>
-            <h4><p><small>{this.state.content? this.state.content.data.portfolio.title : null}</small></p></h4>
-            <p><small>{this.state.content? this.state.content.data.portfolio.text : null}</small></p>
-            {this.state.portfolio ? <Portfolio items={this.state.portfolio} /> : <Loading />}
-          </Paper>
-          <Paper className={styles.section} id="opensource" rounded zDepth={this.getZDepth()}>
-            <h4><p><small>{this.state.content? this.state.content.data.opensource.title : null}</small></p></h4>
-            <p><small>{this.state.content? this.state.content.data.opensource.text : null}</small></p>
-            {this.state.opensource ? <Portfolio items={this.state.opensource}/> : <Loading />}
-          </Paper>
-          <Paper className={styles.section} id="developer-account" rounded zDepth={this.getZDepth()}>
-            <h4><p><small>{this.state.content? this.state.content.data.developerAccount.title : null}</small></p></h4>
-            <p><small>{this.state.content? this.state.content.data.developerAccount.text : null}</small></p>
-            {this.state.developerAccount ? <Portfolio items={this.state.developerAccount}/> : <Loading />}
-          </Paper>
+          {this.state.sections.map(this.createSection)}
         </main>
         <Footer />
       </div>
