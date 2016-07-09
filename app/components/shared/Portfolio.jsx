@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '../../App.css';
 import {List, ListItem} from 'material-ui/List';
-import Avatar from 'material-ui/Avatar';
 import Dialog from './CustomDialog.jsx';
 
 export default class Portfolio extends React.Component {
@@ -31,7 +30,7 @@ export default class Portfolio extends React.Component {
       return (
           <ListItem
               key={index}
-              leftAvatar={<Avatar src={item.image} style={{backgroundColor: '#eee'}} />}
+              leftAvatar={<img className={styles.avatar} src={item.image} />}
               onTouchTap={boundTap}
               primaryText={<b style={{color: '#333'}}>{item.title}</b>}
               secondaryText={
