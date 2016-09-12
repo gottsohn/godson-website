@@ -24,8 +24,6 @@ export default class HomeSection extends React.Component {
         <br/>
         <h4>Contact</h4>
         <p><small><i className={classnames('fa', 'fa-envelope-o', styles.marginRight)}></i><a href='mailto:godson.ukpere@gmail.com'>godson.ukpere@gmail.com</a></small></p>
-        <p><small><i className={classnames('fa', 'fa-phone', styles.marginRight)}></i><a href='tel:+234-809-613-2990'>+234-809-613-2990</a></small></p>
-        <p><small><i className={classnames('fa', 'fa-skype', styles.marginRight)}></i><a href='skype:godson.ukpere'>godson.ukpere</a></small></p>
         <br/>
         {this.props.content ?
           <div>
