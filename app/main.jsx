@@ -4,5 +4,6 @@ import App from './App.jsx';
 import backgroundImage from 'file!./images/background.png';
 import {} from 'file?name=favicon.ico!./favicon.ico';
 
+document.body.style.backgroundAttachment = 'fixed';
 document.body.style.backgroundImage = `url("${backgroundImage}")`;
 ReactDOM.render(<App />, document.getElementById('root'));
