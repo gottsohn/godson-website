@@ -10,7 +10,7 @@ lint:
 
 test: lint
 	@echo Running tests...
-	@$(NODE_BIN)/mocha $(MOCHA_OPTS) $(TEST)
+	@$(NODE_BIN)/istanbul cover $(NODE_BIN)/mocha $(MOCHA_OPTS) $(TEST)
 
 build: lint
 	@echo Building app...
