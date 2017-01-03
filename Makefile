@@ -14,7 +14,7 @@ test: lint
 
 build: lint
 	@echo Building app...
-	@$(NODE_BIN)/rimraf dist && cross-env NODE_ENV=$(PROD_ENV) webpack $(WEBPACK_OPTS)
+	@$(NODE_BIN)/rimraf dist && $(NODE_BIN)/cross-env NODE_ENV=$(PROD_ENV) $(NODE_BIN)/webpack $(WEBPACK_OPTS)
 
 start:
 	@echo Starting...
