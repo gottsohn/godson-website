@@ -5,6 +5,7 @@ import Paper from 'material-ui/Paper';
 import styles from '../App.css';
 import SocialMedia from './shared/SocialMedia.jsx';
 import Proficiency from './shared/Proficiency.jsx';
+import Canvas from './shared/Canvas.jsx';
 import Portfolio from './shared/Portfolio.jsx';
 import Footer from './shared/Footer.jsx';
 import HomeSection from './shared/HomeSection.jsx';
@@ -116,9 +117,11 @@ export default class Home extends React.Component {
   render() {
     return (
       <div className={styles.container}>
+        <Canvas />
         <main>
           <section className={styles.section}>
-            <h1 className={styles.headerTitle}>Godson Ukpere<span className={styles.fancyAnim}>&nbsp;</span></h1>
+            <h1 className={styles.headerTitle}>Godson Ukpere{/*<span className={styles.fancyAnim}>&nbsp;</span>*/}</h1>
+
           </section>
           <Paper className={classnames(styles.section, styles.sectionText)} rounded zDepth={this.getZDepth()}>
             <HomeSection content={this.state.content} />
