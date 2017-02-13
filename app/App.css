@@ -1,6 +1,6 @@
 body {
   font: 500 1em Raleway, 'Trebuchet MS';
-  color: #fff;
+  color: #009090;
   background: #009090 center repeat;
 }
 
@@ -20,10 +20,15 @@ p {
   text-align: center;
 }
 
+main, footer {
+  position: relative;
+  z-index: 1
+}
+
 .section {
   margin: 30px auto;
   max-width: 560px;
-  padding:15px;
+  padding: 15px;
 }
 
 .sectionText {
@@ -36,7 +41,7 @@ a {
   color: inherit;
 }
 
-.icon > span {
+.icon>span {
   display: inline-block;
   margin: 0 0 0 5px;
 }
@@ -45,30 +50,31 @@ a {
   margin: 10px 0;
 }
 
-.proficiency > span {
+.proficiency>span {
   width: 35%;
   font: 0.8em Raleway;
   text-align: left;
 }
 
-.proficiency > span, .proficiency > div {
+.proficiency>span,
+.proficiency>div {
   display: inline-block;
   margin: 0 5px;
   text-align: left;
   vertical-align: middle;
 }
 
-.proficiency > div {
+.proficiency>div {
   width: auto;
   display: inline-block !important;
   max-width: 60%
 }
 
 .portfolio {
-    margin: 0 auto;
-    max-width: 560px;
-    text-align: left;
-    color: #fff !important;
+  margin: 0 auto;
+  max-width: 560px;
+  text-align: left;
+  color: #fff !important;
 }
 
 ul.list {
@@ -78,7 +84,7 @@ ul.list {
   text-align: left;
 }
 
-ul.list > li {
+ul.list>li {
   font-size: 0.8em;
 }
 
@@ -99,13 +105,13 @@ ul.list > li {
   vertical-align: middle;
 }
 
-.icon > span {
+.icon>span {
   margin: 10px 0 0 0;
 }
 
 .headerTitle {
-  font:100 4.8em Raleway;
-  text-shadow: 2px 2px 5px #bbb;
+  font: 100 4.8em Raleway;
+  text-shadow: 0 0 9px #999;
   margin: 0;
 }
 
@@ -125,7 +131,7 @@ ul.list > li {
 
 .itemImage {
   max-height: 128px;
-  padding:5px;
+  padding: 5px;
   border-radius: 50%;
   background-color: #ececec;
 }
@@ -148,20 +154,35 @@ ul.list > li {
 }
 
 @keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.2; }
-    to { opacity: 1.0; }
+  from {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1.0;
+  }
 }
 
 @keyframes translate {
-    from { left: 10%; opacity: 0}
-    50% { left: 40%; opacity: 1}
-    to { left: 80%; opacity: 0}
+  from {
+    left: 10%;
+    opacity: 0
+  }
+  50% {
+    left: 40%;
+    opacity: 1
+  }
+  to {
+    left: 80%;
+    opacity: 0
+  }
 }
 
 .blink {
-   animation:fade 1.5s infinite;
-    -webkit-animation:fade 1.5s infinite;
+  animation: fade 1.5s infinite;
+  -webkit-animation: fade 1.5s infinite;
 }
 
 span.fancyAnim {
@@ -171,4 +192,13 @@ span.fancyAnim {
   opacity: 0;
   animation: translate 5s infinite;
   background-color: rgba(255, 255, 255, 0.15)
+}
+
+.canvas {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }

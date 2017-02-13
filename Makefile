@@ -10,11 +10,11 @@ lint:
 
 test: lint
 	@echo Running tests...
-	@$(NODE_BIN)/mocha $(MOCHA_OPTS) $(TEST)
+	@$(NODE_BIN)/istanbul cover $(NODE_BIN)/mocha $(MOCHA_OPTS) $(TEST)
 
 build: lint
 	@echo Building app...
-	@$(NODE_BIN)/rimraf dist && cross-env NODE_ENV=$(PROD_ENV) webpack $(WEBPACK_OPTS)
+	@$(NODE_BIN)/rimraf dist && $(NODE_BIN)/cross-env NODE_ENV=$(PROD_ENV) $(NODE_BIN)/webpack $(WEBPACK_OPTS)
 
 start:
 	@echo Starting...
