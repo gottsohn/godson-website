@@ -16,7 +16,7 @@ export default class SocialMedia extends React.Component {
               data-tip={item.title}
               href={item.url}
               key={index}
-              style={{fontSize: `${5/this.props.items.length}em`}}
+              style={{fontSize: `${Math.PI/this.props.items.length}rem`}}
               target="blank"
           >
             <i className={classnames('fa', item.className, 'fa-3x')}></i>
