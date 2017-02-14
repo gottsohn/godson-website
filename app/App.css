@@ -20,7 +20,8 @@ p {
   text-align: center;
 }
 
-main, footer {
+main,
+footer {
   position: relative;
   z-index: 1
 }
@@ -100,9 +101,9 @@ ul.list>li {
 }
 
 .emoji {
-  height: 24px;
   display: inline-block;
   vertical-align: middle;
+  font-size: 1.8em;
 }
 
 .icon>span {
@@ -201,4 +202,10 @@ span.fancyAnim {
   top: 0;
   left: 0;
   z-index: 0;
+}
+
+@media(max-width: 540px) {
+    .headerTitle {
+      font-size: 3em;
+    }
 }
